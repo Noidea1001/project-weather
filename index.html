@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weatherhere</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="/component/image/cloudy.png">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap-grid.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <img src="component/image/cloudy.png" alt="" style="width: 40px; height: 40px;">
+        <div class="banner">MY WEATHER</div>
+        <div class="search-container">
+            <input type="text" class="form-control" id="searchBox" placeholder="Search city...">
+            <button type="button" class="btn" id="searchButton">Search</button>
+        </div>
+    </div>
+
+    <nav class="tabs">
+        <button id="tabToday" class="tab active">Today</button>
+        <button id="tabFive" class="tab">5-day forecast</button>
+    </nav>
+
+   <main>
+    <div id="todayContent" class="tab-content active">
+        <div id="weatherDataContainer">
+            <section class="card current-weather">
+                <div class="card-header">
+                    <span class="title">CURRENT WEATHER</span>
+                    <span class="date" id="currentDate"></span>
+                </div>
+                <div class="current-main">
+                    <div class="weather-status">
+                        <img src="" id="weatherIcon" class="skeleton-icon" alt="">
+                        <h1 id="locationName" class="skeleton">Loading...</h1>
+                    </div>
+                    <div class="temp-display">
+                        <h1 id="temperature"></h1>
+                        <p>Real Feel <span id="realFeel"></span></p>
+                    </div>
+                    <div class="sun-times">
+                        <div class="sunRise">Sun rise: <span id="sunRise"></span></div>
+                        <div class="sunSet">Sun set: <span id="sunSet"></span></div>
+                        <div class="duration">Duration: <span id="duration"></span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card hourly-forecast">
+                <div class="card-header"><span class="title">HOURLY</span></div>
+                <div class="hourly-wrapper">
+                    <div class="hourly-labels">
+                        <div class="row-label1">TODAY</div>
+                        <div class="row-label">Forecast</div>
+                        <div class="row-label">Temp (°C)</div>
+                        <div class="row-label">RealFeel</div>
+                        <div class="row-label">Wind (km/h)</div>
+                    </div>
+                    <div class="hourly-timeline" id="hourlyTimeline"></div>
+                </div>
+            </section>
+
+            <section class="card nearby-places">
+                <div class="card-header"><span class="title">NEARBY PLACES</span></div>
+                <div class="nearby-grid" id="nearbyGrid"></div>
+            </section>
+        </div>
+    </div>
+
+    <div id="fiveDayContent" class="tab-content">
+        <div id="fiveDayDataContainer">
+            <div id="fiveDayCards" class="five-day-cards-container"></div>
+            <section class="card hourly-forecast">
+                <div class="card-header"><span class="title">HOURLY</span></div>
+                <div class="hourly-wrapper">
+                    <div class="hourly-labels">
+                        <div class="row-label1" id="selectedDayLabel">TODAY</div>
+                        <div class="row-label">Forecast</div>
+                        <div class="row-label">Temp (°C)</div>
+                        <div class="row-label">RealFeel</div>
+                        <div class="row-label">Wind (km/h)</div>
+                    </div>
+                    <div class="hourly-timeline" id="fiveDayHourlyTimeline"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="errorView" class="hidden">
+        <div class="error-card">
+            <div class="error-404-graphic">
+                <img src="component/image/404.png" alt="404">
+            </div>
+            <h2 class="error-message">
+                <span id="errorCityName"></span> could not be found.
+            </h2>
+            <p class="error-subtext">Please enter a different location.</p>
+        </div>
+    </div>
+</main>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
