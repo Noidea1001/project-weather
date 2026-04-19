@@ -159,7 +159,7 @@ function renderTodayHourly(list) {
             return (Math.abs(curr.dt * 1000 - forecastDate.getTime()) < Math.abs(prev.dt * 1000 - forecastDate.getTime()) ? curr : prev);
         });
 
-        const timeLabel = (i === 0) ? '<span style="color: #383434;">Now</span>' : forecastDate.toLocaleTimeString([], { hour: 'numeric', hour12: true }).toLowerCase().replace(' ', '');
+        const timeLabel = (i === 0) ? '<span style="color: #ffffffff;">Now</span>' : forecastDate.toLocaleTimeString([], { hour: 'numeric', hour12: true }).toLowerCase().replace(' ', '');
 
         let weatherDesc = closestData.weather[0].description;
         if (weatherDesc === 'clear sky') {
@@ -318,7 +318,7 @@ function renderSpecificDayHourly(dayItems) {
             return (Math.abs(curr.dt * 1000 - targetDate.getTime()) < Math.abs(prev.dt * 1000 - targetDate.getTime()) ? curr : prev);
         });
 
-        let timeLabel = (isCityToday && i === 0) ? '<span style="color: #383434;">Now</span>' : targetDate.toLocaleTimeString([], { hour: 'numeric', hour12: true }).toLowerCase().replace(' ', '');
+        let timeLabel = (isCityToday && i === 0) ? '<span style="color: #ffffffff;">Now</span>' : targetDate.toLocaleTimeString([], { hour: 'numeric', hour12: true }).toLowerCase().replace(' ', '');
 
         let weatherDesc = closestData.weather[0].description;
         if (weatherDesc === 'clear sky') {
