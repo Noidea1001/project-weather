@@ -119,7 +119,7 @@ function displayCurrentWeather(data) {
         weatherIcon.style.opacity = '1';
     };
     document.querySelector('#realFeel').textContent = Math.round(data.main.feels_like);
-    document.querySelector('#temperature').innerHTML = Math.round(data.main.temp) + ' &#8451;';
+    document.querySelector('#temperature').innerHTML = Math.round(data.main.temp) +'&#176;C &nbsp;';
     
     let sunrise = new Date(data.sys.sunrise * 1000);
     let sunset = new Date(data.sys.sunset * 1000);
@@ -129,7 +129,7 @@ function displayCurrentWeather(data) {
     const now = new Date();
     const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
     const cityTimeMs = utc + (data.timezone * 1000);
-    const dateOptions = { timeZone: 'UTC', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateOptions = { timeZone: 'UTC', weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
     
     let diffMs = sunset - sunrise;
     let hours = Math.floor(diffMs / (1000 * 60 * 60));
